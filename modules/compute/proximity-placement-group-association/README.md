@@ -1,29 +1,17 @@
-﻿# proximity-placement-group-association
+﻿# Proximity Placement Group Association
 
-Reusable Terraform module for Azure resource type $(System.Collections.Hashtable.resource).
+## Purpose
+Documentation for associating an Azure VM with an existing Proximity Placement Group.
 
-## Input
-
-The module accepts a map named esources. Each map entry defines one resource instance.
+## Implementation
+AzureRM v5.12.0 does not support a standalone PPG association resource.
+Configure proximity_placement_group_id directly inside the VM resource.
 
 ## Example
+proximity_placement_group_id = var.proximity_placement_group_id
 
-``hcl
-module "example" {
-  source = "../../modules/compute/proximity-placement-group-association"
-
-  resources = {
-    example1 = {
-      # Fill in the required attributes from variables.tf
-    }
-  }
-}
-``
-
-## Outputs
-
-- ids: resource IDs
-- 
-ames: resource names
-
-Review required arguments and AzureRM provider compatibility before deployment.
+## Important
+- The PPG must already exist.
+- The VM must be compatible with the PPG.
+- Association is managed through the VM resource.
+- This module does not deploy Azure resources.

@@ -1,5 +1,5 @@
 resource "azurerm_mssql_server" "this" {
-  for_each = var.servers
+  for_each                      = var.servers
   name                          = each.value.name
   resource_group_name           = each.value.resource_group_name
   location                      = each.value.location
@@ -8,5 +8,5 @@ resource "azurerm_mssql_server" "this" {
   administrator_login_password  = each.value.administrator_login_password
   minimum_tls_version           = each.value.minimum_tls_version
   public_network_access_enabled = each.value.public_network_access_enabled
-  tags = each.value.tags
+  tags                          = each.value.tags
 }

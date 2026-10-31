@@ -1,5 +1,5 @@
 resource "azurerm_cosmosdb_account" "this" {
-  for_each = var.accounts
+  for_each            = var.accounts
   name                = each.value.name
   resource_group_name = each.value.resource_group_name
   location            = each.value.location
@@ -13,7 +13,7 @@ resource "azurerm_cosmosdb_account" "this" {
       failover_priority = geo_location.value.failover_priority
     }
   }
-  automatic_failover_enabled = each.value.automatic_failover_enabled
+  automatic_failover_enabled    = each.value.automatic_failover_enabled
   public_network_access_enabled = each.value.public_network_access_enabled
-  tags = each.value.tags
+  tags                          = each.value.tags
 }

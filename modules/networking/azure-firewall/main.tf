@@ -1,4 +1,4 @@
-﻿resource "azurerm_firewall" "resource" {
+resource "azurerm_firewall" "resource" {
   for_each = var.resources
 
   name                = each.value.name

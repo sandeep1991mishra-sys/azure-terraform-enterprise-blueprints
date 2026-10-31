@@ -1,25 +1,25 @@
 output "ids" {
   description = "Map of Azure Public IP resource IDs."
-  value       = { 
-    for key, public_ip in azurerm_public_ip.public_ips : 
-    key => public_ip.id 
-    }
+  value = {
+    for key, public_ip in azurerm_public_ip.public_ips :
+    key => public_ip.id
+  }
 }
 
 output "names" {
   description = "Map of Azure Public IP names."
-  value       = { 
-    for key, public_ip in azurerm_public_ip.public_ips : 
-    key => public_ip.name 
-    }
+  value = {
+    for key, public_ip in azurerm_public_ip.public_ips :
+    key => public_ip.name
+  }
 }
 
 output "ip_addresses" {
   description = "Map of assigned public IP addresses."
-  value       = { 
-    for key, public_ip in azurerm_public_ip.public_ips : 
-    key => public_ip.ip_address 
-    }
+  value = {
+    for key, public_ip in azurerm_public_ip.public_ips :
+    key => public_ip.ip_address
+  }
 }
 
 output "fqdns" {

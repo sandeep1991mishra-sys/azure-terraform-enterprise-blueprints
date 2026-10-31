@@ -1,4 +1,4 @@
-﻿resource "azurerm_linux_virtual_machine_scale_set" "resource" {
+resource "azurerm_linux_virtual_machine_scale_set" "resource" {
   for_each = var.resources
 
   name                = each.value.name

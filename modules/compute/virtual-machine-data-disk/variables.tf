@@ -1,12 +1,12 @@
-﻿variable "resources" {
-  description = "Resource configurations for the virtual-machine-data-disk module."
+variable "resources" {
+  description = "Map of existing managed disks to attach to virtual machines."
   type = map(object({
-  name                 = string
-  resource_group_name  = string
-  location             = string
-  disk_size_gb         = number
-  storage_account_type = optional(string, "Standard_LRS")
-  tags                 = optional(map(string), {})
+    virtual_machine_id     = string
+    managed_disk_id        = string
+    lun                    = number
+    caching                = optional(string, "ReadWrite")
+    create_option          = optional(string, "Attach")
+    write_accelerator_enabled = optional(bool, false)
   }))
   default = {}
 }

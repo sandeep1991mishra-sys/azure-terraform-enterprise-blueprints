@@ -1,4 +1,4 @@
-﻿resource "azurerm_cdn_frontdoor_profile" "resource" {
+resource "azurerm_cdn_frontdoor_profile" "resource" {
   for_each = var.resources
 
   name                = each.value.name

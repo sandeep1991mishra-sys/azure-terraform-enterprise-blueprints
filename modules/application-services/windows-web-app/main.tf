@@ -1,5 +1,5 @@
 resource "azurerm_windows_web_app" "this" {
-  for_each = var.apps
+  for_each            = var.apps
   name                = each.value.name
   resource_group_name = each.value.resource_group_name
   location            = each.value.location

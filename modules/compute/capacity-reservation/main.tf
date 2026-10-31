@@ -1,4 +1,4 @@
-﻿resource "azurerm_capacity_reservation" "resource" {
+resource "azurerm_capacity_reservation" "resource" {
   for_each = var.resources
 
   name                          = each.value.name

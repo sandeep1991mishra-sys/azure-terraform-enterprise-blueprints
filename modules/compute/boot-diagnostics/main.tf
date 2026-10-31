@@ -1,13 +1,13 @@
-﻿resource "azurerm_linux_virtual_machine" "resource" {
+resource "azurerm_linux_virtual_machine" "resource" {
   for_each = var.resources
 
-  name                = each.value.name
-  resource_group_name = each.value.resource_group_name
-  location            = each.value.location
-  size                = each.value.size
-  admin_username      = each.value.admin_username
+  name                  = each.value.name
+  resource_group_name   = each.value.resource_group_name
+  location              = each.value.location
+  size                  = each.value.size
+  admin_username        = each.value.admin_username
   network_interface_ids = each.value.network_interface_ids
-  tags                = each.value.tags
+  tags                  = each.value.tags
 
   os_disk {
     caching              = "ReadWrite"

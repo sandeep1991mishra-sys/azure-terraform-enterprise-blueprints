@@ -1,4 +1,4 @@
-﻿resource "azurerm_virtual_machine_run_command" "resource" {
+resource "azurerm_virtual_machine_run_command" "resource" {
   for_each = var.resources
 
   name               = each.value.name

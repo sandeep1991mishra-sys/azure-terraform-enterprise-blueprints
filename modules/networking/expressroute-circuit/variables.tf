@@ -1,4 +1,4 @@
-﻿variable "resources" {
+variable "resources" {
   description = "Configurations for the expressroute-circuit module."
   type = map(object({
     name                  = string

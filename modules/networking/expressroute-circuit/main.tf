@@ -1,4 +1,4 @@
-﻿resource "azurerm_express_route_circuit" "resource" {
+resource "azurerm_express_route_circuit" "resource" {
   for_each = var.resources
 
   name                  = each.value.name

@@ -1,4 +1,4 @@
-﻿variable "resources" {
+variable "resources" {
   description = "Resource configurations for the capacity reservation"
   type = map(object({
     name                          = string

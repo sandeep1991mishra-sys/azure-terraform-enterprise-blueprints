@@ -1,11 +1,18 @@
-﻿variable "resources" {
-  description = "Configurations for the vpn-connection module."
+variable "resources" {
+  description = "Virtual network gateway connection configurations."
+
   type = map(object({
-    name                      = string
-    vpn_gateway_id            = string
-    remote_vpn_site_id        = string
-    internet_security_enabled = optional(bool, false)
-    tags                      = optional(map(string), {})
+    name                            = string
+    location                        = string
+    resource_group_name             = string
+    type                            = string
+    virtual_network_gateway_id      = string
+    peer_virtual_network_gateway_id = string
+    shared_key                      = string
+    connection_protocol             = optional(string, "IKEv2")
+    tags                            = optional(map(string), {})
   }))
-  default = {}
+
+  sensitive = true
+  default   = {}
 }

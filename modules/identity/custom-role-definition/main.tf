@@ -1,5 +1,5 @@
 resource "azurerm_role_definition" "this" {
-  for_each = var.roles
+  for_each    = var.roles
   name        = each.value.role_name
   scope       = each.value.scope
   description = each.value.description
