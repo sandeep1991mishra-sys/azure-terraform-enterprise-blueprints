@@ -1,4 +1,4 @@
-﻿resource "azurerm_windows_virtual_machine" "resource" {
+resource "azurerm_windows_virtual_machine" "resource" {
   for_each = var.resources
 
   name                  = each.value.name

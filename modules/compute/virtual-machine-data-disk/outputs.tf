@@ -1,9 +1,4 @@
-﻿output "ids" {
-  description = "IDs of created resources."
-  value = { for key, resource in azurerm_managed_disk.resource : key => resource.id }
-}
-
-output "names" {
-  description = "Names of created resources."
-  value = { for key, resource in azurerm_managed_disk.resource : key => resource.name }
+output "ids" {
+  description = "IDs of virtual machine data disk attachments."
+  value       = { for key, resource in azurerm_virtual_machine_data_disk_attachment.resource : key => resource.id }
 }

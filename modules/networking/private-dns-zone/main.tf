@@ -1,4 +1,4 @@
-﻿resource "azurerm_private_dns_zone" "resource" {
+resource "azurerm_private_dns_zone" "resource" {
   for_each = var.resources
 
   name                = each.value.name

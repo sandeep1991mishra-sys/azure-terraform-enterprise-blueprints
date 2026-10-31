@@ -1,4 +1,4 @@
-﻿variable "resources" {
+variable "resources" {
   description = "Configurations for the local-network-gateway module."
   type = map(object({
     name                = string

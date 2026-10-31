@@ -1,5 +1,5 @@
 resource "azurerm_monitor_metric_alert" "this" {
-  for_each = var.alerts
+  for_each            = var.alerts
   name                = each.value.name
   resource_group_name = each.value.resource_group_name
   scopes              = each.value.scopes

@@ -1,6 +1,6 @@
 resource "azurerm_private_dns_zone" "this" {
-  for_each = var.zones
+  for_each            = var.zones
   name                = each.value.name
   resource_group_name = each.value.resource_group_name
-  tags = each.value.tags
+  tags                = each.value.tags
 }

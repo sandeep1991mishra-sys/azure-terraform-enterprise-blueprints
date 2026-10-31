@@ -1,4 +1,4 @@
-﻿resource "azurerm_private_endpoint" "resource" {
+resource "azurerm_private_endpoint" "resource" {
   for_each = var.resources
 
   name                = each.value.name

@@ -1,4 +1,4 @@
-﻿resource "azurerm_managed_disk" "resource" {
+resource "azurerm_managed_disk" "resource" {
   for_each = var.resources
 
   name                 = each.value.name

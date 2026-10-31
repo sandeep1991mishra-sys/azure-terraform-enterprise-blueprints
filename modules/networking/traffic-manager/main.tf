@@ -1,4 +1,4 @@
-﻿resource "azurerm_traffic_manager_profile" "resource" {
+resource "azurerm_traffic_manager_profile" "resource" {
   for_each = var.resources
 
   name                   = each.value.name

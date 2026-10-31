@@ -1,11 +1,10 @@
-﻿resource "azurerm_managed_disk" "resource" {
+resource "azurerm_virtual_machine_data_disk_attachment" "resource" {
   for_each = var.resources
 
-  name                 = each.value.name
-  resource_group_name  = each.value.resource_group_name
-  location             = each.value.location
-  disk_size_gb         = each.value.disk_size_gb
-  storage_account_type = each.value.storage_account_type
-  create_option        = "Empty"
-  tags                 = each.value.tags
+  virtual_machine_id        = each.value.virtual_machine_id
+  managed_disk_id           = each.value.managed_disk_id
+  lun                       = each.value.lun
+  caching                   = each.value.caching
+  create_option             = each.value.create_option
+  write_accelerator_enabled = each.value.write_accelerator_enabled
 }

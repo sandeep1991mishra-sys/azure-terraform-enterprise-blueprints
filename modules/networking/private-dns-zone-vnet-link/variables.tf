@@ -1,12 +1,13 @@
-﻿variable "resources" {
-  description = "Configurations for the private-dns-zone-vnet-link module."
+variable "resources" {
+  description = "Private DNS zone VNet link configurations."
+
   type = map(object({
-    name = string
-    resource_group_name = string
-    private_dns_zone_name = string
-    virtual_network_id = string
+    name                 = string
+    private_dns_zone_id  = string
+    virtual_network_id   = string
     registration_enabled = optional(bool, false)
-    tags = optional(map(string), {})
+    tags                 = optional(map(string), {})
   }))
+
   default = {}
 }

@@ -1,5 +1,5 @@
 resource "azurerm_storage_management_policy" "this" {
-  for_each = var.policies
+  for_each           = var.policies
   storage_account_id = each.value.storage_account_id
   dynamic "rule" {
     for_each = each.value.rules

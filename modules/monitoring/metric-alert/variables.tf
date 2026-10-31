@@ -16,7 +16,7 @@ variable "alerts" {
       threshold        = number
     })
     action_group_ids = optional(list(string), [])
-    tags = optional(map(string), {})
+    tags             = optional(map(string), {})
   }))
   default = {}
 }

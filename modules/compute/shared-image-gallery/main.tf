@@ -1,4 +1,4 @@
-﻿resource "azurerm_shared_image_gallery" "resource" {
+resource "azurerm_shared_image_gallery" "resource" {
   for_each = var.resources
 
   name                = each.value.name

@@ -1,4 +1,4 @@
-﻿resource "azurerm_application_gateway" "resource" {
+resource "azurerm_application_gateway" "resource" {
   for_each = var.resources
 
   name                = each.value.name

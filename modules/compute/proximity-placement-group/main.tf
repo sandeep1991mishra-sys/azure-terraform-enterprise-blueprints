@@ -1,4 +1,4 @@
-﻿resource "azurerm_proximity_placement_group" "resource" {
+resource "azurerm_proximity_placement_group" "resource" {
   for_each = var.resources
 
   name                = each.value.name

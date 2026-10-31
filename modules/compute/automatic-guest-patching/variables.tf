@@ -1,4 +1,4 @@
-﻿variable "resources" {
+variable "resources" {
   description = "Linux VMs configured for automatic guest patching."
 
   type = map(object({

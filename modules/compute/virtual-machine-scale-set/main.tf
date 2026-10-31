@@ -1,4 +1,4 @@
-﻿resource "azurerm_linux_virtual_machine_scale_set" "resource" {
+resource "azurerm_linux_virtual_machine_scale_set" "resource" {
   for_each = var.resources
 
   name                = each.value.name
@@ -11,7 +11,7 @@
 
   admin_ssh_key {
     username   = each.value.admin_username
-    public_key = "REPLACE_WITH_A_VALID_SSH_PUBLIC_KEY"
+    public_key = each.value.admin_ssh_public_key
   }
 
   source_image_reference {

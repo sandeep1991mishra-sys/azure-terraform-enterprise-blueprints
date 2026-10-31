@@ -1,5 +1,5 @@
 resource "azurerm_backup_policy_vm" "this" {
-  for_each = var.policies
+  for_each            = var.policies
   name                = each.value.name
   resource_group_name = each.value.resource_group_name
   recovery_vault_name = each.value.recovery_vault_name

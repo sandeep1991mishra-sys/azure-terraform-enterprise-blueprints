@@ -1,4 +1,4 @@
-﻿resource "azurerm_vpn_gateway" "resource" {
+resource "azurerm_vpn_gateway" "resource" {
   for_each = var.resources
 
   name                = each.value.name

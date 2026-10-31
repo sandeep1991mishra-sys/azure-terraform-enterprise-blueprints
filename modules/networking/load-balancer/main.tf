@@ -1,4 +1,4 @@
-﻿resource "azurerm_lb" "resource" {
+resource "azurerm_lb" "resource" {
   for_each = var.resources
 
   name                = each.value.name
