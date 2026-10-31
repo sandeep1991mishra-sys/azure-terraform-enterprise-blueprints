@@ -7,6 +7,7 @@ variable "resources" {
     sku                 = optional(string, "Standard_B1s")
     instances           = optional(number, 1)
     admin_username      = string
+    admin_ssh_public_key = string
     subnet_id           = string
     tags                = optional(map(string), {})
   }))

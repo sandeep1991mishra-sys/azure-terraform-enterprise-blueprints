@@ -23,7 +23,7 @@ resource "azurerm_linux_virtual_machine" "resource" {
 
   admin_ssh_key {
     username   = each.value.admin_username
-    public_key = "REPLACE_WITH_A_VALID_SSH_PUBLIC_KEY"
+    public_key = each.value.admin_ssh_public_key
   }
 
   boot_diagnostics {
